@@ -1,0 +1,28 @@
+li {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #eee;
+  font-size: 16px;
+  font-family: helvetica;
+  color: black;
+  width: 225px;
+  margin-top: 10px;
+  list-style-type: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+li span {
+  background-color: #555;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 7px 10px;
+  margin: 0 10px 0 -5px;
+}
+
+.mood {
+  background-color: #9d9d9d;
+  color: white;
+}
+
+

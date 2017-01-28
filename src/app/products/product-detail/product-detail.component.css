@@ -1,0 +1,36 @@
+.bottomDetails h1 {
+  margin-top: 5px;
+  font-family: serif;
+}
+
+.topDetail {
+  margin-top: 40px;
+}
+
+.brandDescript {
+  font-family: serif;
+  font-size: 16px;
+}
+.price {
+  font-size: 34px;
+  font-family: serif;
+  margin-top: 10px;
+}
+
+.buttons {
+  margin: 0 auto;
+}
+
+.buttons button {
+  display: inline-block;
+}
+
+img {
+  width: 340px;
+  height: 430px;
+  border: 1px solid lightgrey;
+}
+
+.detailsButtons {
+  margin-top: 20px;
+}
