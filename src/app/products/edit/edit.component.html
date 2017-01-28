@@ -1,0 +1,69 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-6">
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <div class="form-group edit-form">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title" formControlName="title">
+        </div>
+         <div class="form-group">
+          <label for="description">Description</label>
+          <textarea type="text" class="form-control" id="description"formControlName="description">
+          </textarea>
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="text" class="form-control" id="price" formControlName="price">
+        </div>
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input type="text" class="form-control" id="image" formControlName="image">
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <ul class="list-group" formArrayName="items">
+              <div class="row"
+                *ngFor="let item of productForm.controls['items'].controls; let i = index">
+                <div formGroupName="{{i}}">
+                  <div class="col-sm-5">
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="name">
+                  </div>
+                  <div class="col-sm-5">
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="amount">
+                  </div>
+                  <div class="col-sm-2">
+                    <button class="btn btn-danger" (click)="onRemoveItem(i)">X</button>
+                  </div>
+                </div>
+                <br><br>
+              </div>
+            </ul>
+          </div>
+          <button type="submit" class="btn btn-success saveButton" [disabled]="!productForm.valid">SAVE</button>
+          <a class="btn btn-danger" (click)="onCancel()">CANCEL</a>
+          <br><br>
+          <hr>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <div class="col-sm-5"><input type="text" class="form-control" #itemName></div>
+                <div class="col-sm-5"><input type="number" class="form-control" #itemAmount></div>
+                <div class="col-sm-2">
+                  <button type="button" class="btn btn-primary"
+                    (click)="onAddItem(itemName.value, itemAmount.value)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      </form>
+      </div>
+  </div>
+</div>
+

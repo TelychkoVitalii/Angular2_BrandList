@@ -1,0 +1,28 @@
+ <div class="row">
+      <div class="col-xs-12 topDetail">
+          <div class="col-xs-6">
+            <div><img src="{{ selectedProduct?.image }}"></div>
+          </div>
+          <div class="col-xs-6 bottomDetails">
+            <h1>{{ selectedProduct?.title }}</h1>
+            <div class="brandDescript">
+                <span>{{ selectedProduct?.description }}</span>
+            </div>
+            <div class="price">{{ selectedProduct?.price }}</div>
+            <div class="detailsButtons">
+              <button class="btn btn-success" (click)="addToShoppingList()">To Shopping List</button>
+              <button class="btn btn-primary" (click)="onEdit()">Edit</button>
+              <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+          </div>
+          </div>
+      </div>
+ </div>
+
+
+             <!--<image-upload-->
+              <!--[max]="100"-->
+              <!--[buttonCaption]="'Select Images!'"-->
+              <!--(onFileUploadFinish)="imageUploaded($event)"-->
+              <!--(onRemove)="imageRemoved($event)">-->
+             <!--</image-upload>-->
+

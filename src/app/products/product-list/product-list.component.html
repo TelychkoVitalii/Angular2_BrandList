@@ -1,0 +1,9 @@
+ <div class="row">
+    <div class="col-xs-10">
+      <ul class="item">
+        <product-item *ngFor="let product of products; let i = index"
+                      [product]="product" [productId]="i"></product-item>
+      </ul>
+      <button class="btn btn-success" [routerLink]="['new']">CREATE</button>
+    </div>
+  </div>

@@ -1,0 +1,15 @@
+.startDescription {
+  margin-top: 40px;
+  padding: 50px 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-family: Inconsolata;
+}
+
+.startDescription h1 {
+  font-size: 40px;
+}
+
+.startDescription p {
+  font-size: 24px;
+}
