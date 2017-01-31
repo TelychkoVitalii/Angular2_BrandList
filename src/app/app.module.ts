@@ -14,6 +14,8 @@ import { SignUpComponent } from './auth/sign-up.component';
 import { SignInComponent } from './auth/sign-in.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { AuthGuard } from "./auth.guard";
+import { ProfileComponent } from './profile/profile.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
     imports: [
@@ -31,7 +33,9 @@ import { AuthGuard } from "./auth.guard";
     DropdownDirective,
     HomeComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    ProfileComponent,
+    SettingsComponent
   ],
 
   providers: [ProductsService, ShoppingListService, AuthService, AuthGuard],

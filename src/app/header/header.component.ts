@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductsService } from "../products/products.service";
 import { AuthService } from "../auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'header',
@@ -10,7 +11,7 @@ import { AuthService } from "../auth.service";
 export class HeaderComponent {
   isAuthenticated = false;
 
-  constructor(private productsService: ProductsService, private authService: AuthService) {
+  constructor(private productsService: ProductsService, private authService: AuthService, private router: Router) {
     this.authService.isAuthenticated().subscribe(
             authStatus => this.isAuthenticated = authStatus
     );
@@ -32,6 +33,13 @@ export class HeaderComponent {
     return this.isAuthenticated;
   }
 
+  onProfile() {
+    this.router.navigate(['profile']);
+  }
+
+  onSet() {
+    this.router.navigate(['settings']);
+  }
   onLogout() {
     this.authService.logout();
   }
