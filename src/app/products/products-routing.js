@@ -8,4 +8,4 @@ exports.Products_routes = [
     { path: ':id', component: product_detail_component_1.ProductDetailComponent },
     { path: ':id/edit', component: edit_component_1.EditComponent }
 ];
-//# sourceMappingURL=products.routes.js.map
+//# sourceMappingURL=products-routing.jss.map

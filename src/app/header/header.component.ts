@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductsService } from "../products/products.service";
+import { AuthService } from "../auth.service";
 
 @Component({
   selector: 'header',
@@ -7,8 +8,13 @@ import { ProductsService } from "../products/products.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  isAuthenticated = false;
 
-  constructor(private productsService: ProductsService) {}
+  constructor(private productsService: ProductsService, private authService: AuthService) {
+    this.authService.isAuthenticated().subscribe(
+            authStatus => this.isAuthenticated = authStatus
+    );
+  }
 
   onStore() {
     return this.productsService.storeData()
@@ -20,5 +26,13 @@ export class HeaderComponent {
 
   onFetch() {
     return this.productsService.fetchData();
+  }
+
+  isAuth() {
+    return this.isAuthenticated;
+  }
+
+  onLogout() {
+    this.authService.logout();
   }
 }

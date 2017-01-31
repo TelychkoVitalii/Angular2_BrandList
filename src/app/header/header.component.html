@@ -5,15 +5,18 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li routerLinkActive="active"><a [routerLink]="['list']">Top Brands</a></li>
-        <li routerLinkActive="active"><a [routerLink]="['shopping-list']">Shopping List</a></li>
+        <li routerLinkActive="active" *ngIf="!isAuth()"><a [routerLink]="['signUp']">Sign Up</a></li>
+        <li routerLinkActive="active" *ngIf="!isAuth()"><a [routerLink]="['signIn']">Sign In</a></li>
+        <li routerLinkActive="active" *ngIf="isAuth()"><a [routerLink]="['list']">Top Brands</a></li>
+        <li routerLinkActive="active" *ngIf="isAuth()"><a [routerLink]="['shopping-list']">Shopping List</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right" *ngIf="isAuth()">
         <li class="dropdown" dropdown>
-          <a class="dropdown-toggle">Brand Management</a>
+          <a class="dropdown-toggle">User</a>
           <ul class="dropdown-menu">
             <li><a (click)="onStore()">Store</a></li>
             <li><a (click)="onFetch()">Retrieve</a></li>
+            <li><a (click)="onLogout()">Logout</a></li>
           </ul>
         </li>
       </ul>
