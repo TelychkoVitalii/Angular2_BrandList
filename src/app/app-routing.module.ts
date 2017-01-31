@@ -1,8 +1,8 @@
 import { RouterModule, Routes } from '@angular/router';
 import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
-import { HomeComponent } from "./home.component";
 import { SignUpComponent } from "./auth/sign-up.component";
 import { SignInComponent } from "./auth/sign-in.component";
+import { HomeComponent } from "./home.component";
 
 const routes: Routes = [
   { path: 'list', loadChildren: 'app/products/products.module#ProductsModule' },
@@ -13,3 +13,4 @@ const routes: Routes = [
 ];
 
 export const routing = RouterModule.forRoot(routes);
+

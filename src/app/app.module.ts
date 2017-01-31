@@ -21,6 +21,7 @@ import { AuthGuard } from "./auth.guard";
       HttpModule,
       routing,
       ShoppingListModule,
+      HttpModule,
       ReactiveFormsModule
   ],
 
