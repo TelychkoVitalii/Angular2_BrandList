@@ -16,17 +16,17 @@ export class HeaderComponent {
     );
   }
 
-  onStore() {
-    return this.productsService.storeData()
-      .subscribe(
-        data => console.log(data),
-        error => console.log(error)
-      )
-  }
-
-  onFetch() {
-    return this.productsService.fetchData();
-  }
+  // onStore() {
+  //   return this.productsService.storeData()
+  //     .subscribe(
+  //       data => console.log(data),
+  //       error => console.log(error)
+  //     )
+  // }
+  //
+  // onFetch() {
+  //   return this.productsService.fetchData();
+  // }
 
   isAuth() {
     return this.isAuthenticated;

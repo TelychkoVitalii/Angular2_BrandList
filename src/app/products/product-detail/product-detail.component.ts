@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, style, state, animate, transition, trigger  } from '@angular/core';
 import { Product } from "../../product";
 import { ShoppingListService } from "../../shopping-list/shopping-list.service";
 import { ActivatedRoute, Router } from "@angular/router";
@@ -8,7 +8,28 @@ import { ProductsService } from "../products.service";
 @Component({
   selector: 'product-detail',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  styleUrls: ['./product-detail.component.css'],
+  animations: [
+    trigger('list1', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(-100px)'
+        }),
+        animate(400)
+      ]),
+      transition('* => void', [
+        animate(200, style({
+          transform: 'translateX(100px)',
+          opacity: 0
+        }))
+      ])
+    ]),
+  ]
 })
 export class ProductDetailComponent {
   selectedProduct: Product;

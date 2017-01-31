@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-xs-10">
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let item of items" (click)="onSelectItem(item)">{{ item.name }} {{ item.amount }}</li>
+      <li class="list-group-item" *ngFor="let item of items" (click)="onSelectItem(item)" [@list1]>{{ item.name }} {{ item.amount }}</li>
     </ul>
     <hr>
     <shopping-list-add [item]="selectedItem" (cleared)="onCleared()"></shopping-list-add>

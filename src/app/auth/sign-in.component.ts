@@ -15,7 +15,7 @@ import { Router } from "@angular/router";
                 <label for="password">Password</label>
                 <input formControlName="password" type="password" id="password" class="form-control">
             </div>
-            <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Sign In</button>
+            <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary" style="margin-top: 20px">Sign In</button>
         </form>
     `
 })

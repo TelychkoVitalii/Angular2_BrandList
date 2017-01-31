@@ -1,4 +1,7 @@
-import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
+import {
+  Component, Input, OnChanges, Output, EventEmitter, style, state, animate, transition,
+  trigger
+} from '@angular/core';
 import { Item } from "../../items";
 import { ShoppingListService } from "../shopping-list.service";
 

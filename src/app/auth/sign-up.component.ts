@@ -22,7 +22,7 @@ import { Router } from "@angular/router";
                 <input formControlName="confirmPassword" type="password" id="confirm-password" #confirmPassword class="form-control">
                 <span *ngIf="!confirmPassword.pristine && confirmPassword.errors != null && confirmPassword.errors['passwordsNotMatch']">Passwords do not match</span>
             </div>
-            <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Sign Up</button>
+            <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary" >Sign Up</button>
         </form>
     `
 })

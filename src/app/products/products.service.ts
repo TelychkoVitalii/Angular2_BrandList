@@ -54,24 +54,24 @@ export class ProductsService {
     this.products.splice(this.products.indexOf(product), 1);
   }
 
-  storeData() {
-    const body = JSON.stringify(this.products);
-    const headers = new Headers({
-    'Content-Type': 'application/json'
-    });
-    return this.http.put('https://angular2productlist.firebaseio.com/products.json', body, {
-      headers: headers
-    });
-  }
-
-  fetchData() {
-    return this.http.get('https://angular2productlist.firebaseio.com/products.json')
-      .map((data: Response) => data.json())
-      .subscribe(
-        (data: Product[]) => {
-          this.products = data;
-          this.productChanged.emit(this.products);
-        }
-      )
-  }
+  // storeData() {
+  //   const body = JSON.stringify(this.products);
+  //   const headers = new Headers({
+  //   'Content-Type': 'application/json'
+  //   });
+  //   return this.http.put('https://angular2productlist.firebaseio.com/products.json', body, {
+  //     headers: headers
+  //   });
+  // }
+  //
+  // fetchData() {
+  //   return this.http.get('https://angular2productlist.firebaseio.com/products.json')
+  //     .map((data: Response) => data.json())
+  //     .subscribe(
+  //       (data: Product[]) => {
+  //         this.products = data;
+  //         this.productChanged.emit(this.products);
+  //       }
+  //     )
+  // }
 }
