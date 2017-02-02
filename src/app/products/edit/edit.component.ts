@@ -1,4 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+/*
+  Via edit component we can create new form and edit old form. Edit old form we can with routerId
+*/
+
+import { Component, OnDestroy, OnInit, style, state, animate, transition, trigger } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { ProductsService } from "../products.service";
 import { Subscription } from "rxjs";
@@ -8,12 +12,33 @@ import { FormArray, FormGroup, FormControl, Validators, FormBuilder } from "@ang
 @Component({
   selector: 'edit',
   templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  styleUrls: ['./edit.component.css'],
+  animations: [
+    trigger('list1', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateY(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateY(-100px)'
+        }),
+        animate(500)
+      ]),
+      transition('* => void', [
+        animate(200, style({
+          transform: 'translateX(100px)',
+          opacity: 0
+        }))
+      ])
+    ]),
+  ]
 })
 export class EditComponent implements OnInit, OnDestroy {
-  private productIndex: number;
-  private product: Product;
-  private isNew = true;
+  private productIndex: number; // productId
+  private product: Product; // this is an old product which we will want to edit
+  private isNew = true; // variable to create new form
   private subscription: Subscription;
   productForm: FormGroup;
 
@@ -22,6 +47,10 @@ export class EditComponent implements OnInit, OnDestroy {
               private formbuilder: FormBuilder,
               private router: Router) { }
 
+
+  /*
+    If our route has an id we can edit this id route. If not, so this product is new.
+   */
   ngOnInit() {
     this.subscription = this.route.params.subscribe(
       (params: any) => {
@@ -45,7 +74,7 @@ export class EditComponent implements OnInit, OnDestroy {
     } else {
       this.productsService.editProduct(this.product, newProduct);
     }
-    this.navigateBack();
+    // this.navigateBack();
   }
 
   onCancel() {
@@ -73,7 +102,7 @@ export class EditComponent implements OnInit, OnDestroy {
   }
 
   private navigateBack() {
-    this.router.navigate(['../']);
+    this.router.navigate(['../']); // navigate to one step before
   }
 
   private initForm() {

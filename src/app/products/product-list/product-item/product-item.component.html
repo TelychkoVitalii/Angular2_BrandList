@@ -1,1 +1,7 @@
- <li [routerLink]="[productId]" routerLinkActive="mood"><span></span>{{ product.title }}</li>
+<!--
+  This is the minimum basic component where we defined one basic product.
+  Here we have interpolation with product interface and interaction with another component (details)
+  via router - routerLink = productId. Also defined CSS class via routerLinkActive for active product.
+  Also we have angular animations added property [@list1].
+-->
+<li [routerLink]="[productId]" routerLinkActive="mood" [@list1]><span></span>{{ product.title }}</li>

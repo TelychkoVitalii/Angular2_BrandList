@@ -1,3 +1,5 @@
+// main file which bootstrap our root AppModule
+
 import './polyfills.ts';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';

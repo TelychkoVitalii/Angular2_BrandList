@@ -1,0 +1,12 @@
+<h3 class="text-center">Please, sign in to use all features</h3>
+    <form [formGroup]="myForm" (ngSubmit)="onSignIn()" class="center-block">
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input formControlName="email" type="email" id="email" class="form-control">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input formControlName="password" type="password" id="password" class="form-control">
+            </div>
+            <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary" style="margin-top: 20px">Sign In</button>
+    </form>

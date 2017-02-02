@@ -1,4 +1,4 @@
-import { Component, OnDestroy, style, state, animate, transition, trigger  } from '@angular/core';
+import { Component, OnDestroy, style, state, animate, transition, trigger } from '@angular/core';
 import { Product } from "../../product";
 import { ShoppingListService } from "../../shopping-list/shopping-list.service";
 import { ActivatedRoute, Router } from "@angular/router";
@@ -41,6 +41,9 @@ export class ProductDetailComponent {
               private productsService: ProductsService,
               private router: Router) { }
 
+  /* we subscribe on Activated route where we extracted params id and say that all selectedProducts we want
+      to receive by its own id
+  */
   ngOnInit() {
     this.subscription = this.route.params.subscribe(
       (params: any) => {
@@ -68,6 +71,7 @@ export class ProductDetailComponent {
     }
   }
 
+  // destroy subscription
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductsService } from "../products/products.service";
 import { AuthService } from "../auth.service";
 import { Router } from "@angular/router";
+import { ShoppingListService } from "../shopping-list/shopping-list.service";
 
 @Component({
   selector: 'header',
@@ -11,7 +12,8 @@ import { Router } from "@angular/router";
 export class HeaderComponent {
   isAuthenticated = false;
 
-  constructor(private productsService: ProductsService, private authService: AuthService, private router: Router) {
+  constructor(private productsService: ProductsService, private authService: AuthService, private router: Router,
+              private sls: ShoppingListService) {
     this.authService.isAuthenticated().subscribe(
             authStatus => this.isAuthenticated = authStatus
     );

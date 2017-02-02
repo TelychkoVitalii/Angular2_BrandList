@@ -1,14 +1,14 @@
 <div class="container">
 <div class="row">
     <div class="col-md-6">
-      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()" [@list1]>
         <div class="form-group edit-form">
           <label for="title">Title</label>
           <input type="text" class="form-control" id="title" formControlName="title">
         </div>
          <div class="form-group">
           <label for="description">Description</label>
-          <textarea type="text" class="form-control" id="description"formControlName="description">
+          <textarea type="text" class="form-control" id="description" formControlName="description">
           </textarea>
         </div>
         <div class="form-group">

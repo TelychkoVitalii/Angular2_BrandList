@@ -1,3 +1,5 @@
+// Product interface (class)
+
 import { Item } from "./items";
 
 export class Product {

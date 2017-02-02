@@ -1,31 +1,14 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators, FormControl } from "@angular/forms";
-import { AuthService } from "../auth.service";
 import { Router } from "@angular/router";
-
+import { AuthService } from "../../auth.service";
 
 @Component({
-    template: `
-        <h3>Please sign up to use all features</h3>
-        <form [formGroup]="myForm" (ngSubmit)="onSignUp()">
-            <div class="form-group">
-                <label for="email">E-Mail</label>
-                <input formControlName="email" type="email" id="email" #email class="form-control">
-                <span *ngIf="!email.pristine && email.errors != null && email.errors['noEmail']">Invalid mail address</span>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input formControlName="password" type="password" id="password" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input formControlName="confirmPassword" type="password" id="confirm-password" #confirmPassword class="form-control">
-                <span *ngIf="!confirmPassword.pristine && confirmPassword.errors != null && confirmPassword.errors['passwordsNotMatch']">Passwords do not match</span>
-            </div>
-            <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary" >Sign Up</button>
-        </form>
-    `
+    selector: 'signUp',
+    templateUrl: './sign-up.component.html',
+    styleUrls: ['./sign-up.component.css']
 })
+
 export class SignUpComponent {
     myForm: FormGroup;
     error = false;

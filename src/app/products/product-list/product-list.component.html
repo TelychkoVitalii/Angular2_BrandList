@@ -1,4 +1,9 @@
- <div class="row">
+<!--
+  In this file we paste our product-item in the list and render them via *ngFor added index.
+  This index we use as a value to property productId which defined in product-item file as @Input().
+  Here [product]='product' where first property from @Input[] and the second a variable 'product' from *ngFor.
+ -->
+<div class="row">
     <div class="col-xs-10">
       <ul class="item">
         <product-item *ngFor="let product of products; let i = index"

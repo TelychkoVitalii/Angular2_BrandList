@@ -5,6 +5,7 @@ import { Item } from "../items";
 export class ShoppingListService {
   private items: Item[] = [];
 
+
   getItems() {
     return this.items;
   }

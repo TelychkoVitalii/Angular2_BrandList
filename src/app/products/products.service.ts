@@ -35,10 +35,10 @@ export class ProductsService {
   constructor(private http: Http) {}
 
   getProducts() {
-    return this.products;
+    return this.products; // method to return all products
   }
 
-  getProduct(id: number) {
+  getProduct(id: number) { // method to access to product id
     return this.products[id];
   }
 

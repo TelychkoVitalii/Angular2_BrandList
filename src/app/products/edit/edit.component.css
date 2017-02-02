@@ -5,3 +5,6 @@
 .saveButton {
   margin-left: 15px;
 }
+#description {
+  height: 100px;
+}

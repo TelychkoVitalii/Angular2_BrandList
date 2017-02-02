@@ -1,3 +1,5 @@
+// This file host all modules, services, directives, pipes and bootstrap our root AppComponent
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
@@ -10,12 +12,12 @@ import { ShoppingListService } from "./shopping-list/shopping-list.service";
 import { ShoppingListModule } from "./shopping-list/shopping-list.module";
 import { HomeComponent } from './home.component';
 import { AuthService } from "./auth.service";
-import { SignUpComponent } from './auth/sign-up.component';
-import { SignInComponent } from './auth/sign-in.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { AuthGuard } from "./auth.guard";
 import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
+import { SignUpComponent } from "./auth/signUp/sign-up.component";
+import { SignInComponent } from "./auth/signIn/sign-in.component";
 
 @NgModule({
     imports: [

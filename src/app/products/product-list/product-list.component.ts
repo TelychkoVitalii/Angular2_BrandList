@@ -9,14 +9,14 @@ import { ProductsService } from "../products.service";
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  products: Product[] = [];
+  products: Product[] = []; // here we defined a place where we want to push all list of products.It will be an array.
 
   constructor(
-    private productsService: ProductsService,
+    private productsService: ProductsService, // a new service for our products
   ) { }
 
   ngOnInit(): void {
-    this.products = this.productsService.getProducts();
+    this.products = this.productsService.getProducts(); // this empty products array equal to all products
     this.productsService.productChanged.subscribe(
       (products: Product[]) => this.products = products
   )
